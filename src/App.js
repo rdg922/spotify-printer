@@ -6,7 +6,7 @@ import axios from 'axios';
 /* https://accounts.spotify.com/authorize?client_id=5fe01282e44241328a84e7c5cc169165&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&state=34fFs29kd09 */
 const CLIENT_ID = "098520251b854f2ab32422501b833835"
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
-const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/"
+const REDIRECT_URL_AFTER_LOGIN = "https://rdg922.github.io/spotify-printer/build/index.html"
 
 const SCOPES = ["ugc-image-upload", "user-read-recently-played", "user-read-playback-state", "user-top-read", "playlist-modify-public", "user-modify-playback-state", "playlist-modify-private", "user-follow-modify", "user-read-currently-playing", "user-follow-read", "user-library-modify", "user-read-playback-position", "playlist-read-private", "user-read-email", "user-read-private", "user-library-read", "playlist-read-collaborative"]
 const SCOPES_URL_PARAM = SCOPES.join("%20");
