@@ -4,11 +4,11 @@ import './App.css';
 import axios from 'axios';
 
 /* https://accounts.spotify.com/authorize?client_id=5fe01282e44241328a84e7c5cc169165&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&state=34fFs29kd09 */
-const CLIENT_ID = "098520251b854f2ab32422501b833835"
-const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
-const REDIRECT_URL_AFTER_LOGIN = "https://rdg922.github.io/spotify-printer/build/index.html"
+const CLIENT_ID = "CLIENT_ID_HERE";
+const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
+const REDIRECT_URL_AFTER_LOGIN = "https://rdg922.github.io/spotify-printer/build/index.html";
 
-const SCOPES = ["ugc-image-upload", "user-read-recently-played", "user-read-playback-state", "user-top-read", "playlist-modify-public", "user-modify-playback-state", "playlist-modify-private", "user-follow-modify", "user-read-currently-playing", "user-follow-read", "user-library-modify", "user-read-playback-position", "playlist-read-private", "user-read-email", "user-read-private", "user-library-read", "playlist-read-collaborative"]
+const SCOPES = ["ugc-image-upload", "user-read-recently-played", "user-read-playback-state", "user-top-read", "playlist-modify-public", "user-modify-playback-state", "playlist-modify-private", "user-follow-modify", "user-read-currently-playing", "user-follow-read", "user-library-modify", "user-read-playback-position", "playlist-read-private", "user-read-email", "user-read-private", "user-library-read", "playlist-read-collaborative"];
 const SCOPES_URL_PARAM = SCOPES.join("%20");
 
 const TOP_ENDPOINT = "	https://api.spotify.com/v1/me/top/tracks"
@@ -17,12 +17,11 @@ const getReturnParamsFromSpotifyAuth = (hash) => {
   const stringAfterHashtag = hash.substring(1);
   const paramsInUrl = stringAfterHashtag.split("&");
   const paramsSplitUp = paramsInUrl.reduce((accumulator, currentValue) => {
-    const [key, value] = currentValue.split("=")
+    const [key, value] = currentValue.split("=");
     accumulator[key] = value;
-    console.log(accumulator)
     return accumulator;
   }, {})
-  return paramsSplitUp
+  return paramsSplitUp;
 }
 
 function App() {
@@ -59,14 +58,12 @@ function App() {
         Authorization: "Bearer " + token
       }
     }).then(response => {
-      // setData(response.data)
-      console.log(response.data.items)
 
-      let newData = []
+      let newData = [];
       for(let track of response.data.items){
         const url = track.album.images[1].url
         if (newData.indexOf(url) == -1) {
-          newData.push(url)
+          newData.push(url);
         }
       }
       setData(newData.slice(0, 10))
