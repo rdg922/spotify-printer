@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Spotify Printer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Allows users to see their top most played spotify songs in a printable format. Used by myself to put album covers on my board. Created in React with Spotify OAuth.
+
 
 ## Available Scripts
 
