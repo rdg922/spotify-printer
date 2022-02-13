@@ -2,6 +2,9 @@
 
 Allows users to see their top most played spotify songs in a printable format. Used by myself to put album covers on my board. Created in React with Spotify OAuth.
 
+Try it out [here](https://rdg922.github.io/spotify-printer/build/index.html)
+
+In order to run this on your own, make sure to put your spotify client id inside the .env file
 
 ## Available Scripts
 
